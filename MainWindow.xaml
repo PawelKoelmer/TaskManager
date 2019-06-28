@@ -60,7 +60,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-                  
+        <Label Content="Filtr priorytet" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="156,449,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Filtr status" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="27,449,0,0" VerticalAlignment="Top" Width="87"/>
+
 
     </Grid>
 </Window>

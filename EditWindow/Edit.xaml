@@ -9,7 +9,7 @@
     <Grid>
         <TextBox x:Name="TaskText" HorizontalAlignment="Left" Height="189" Margin="48,36,0,0" TextWrapping="Wrap" MaxLength="1000" VerticalAlignment="Top" Width="459"/>
         <!--<Button x:Name="Add" Content="Dodaj Task" HorizontalAlignment="Left" Height="46" Margin="188,334,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Click="createTask"/>-->
-        <ComboBox x:Name="priority" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="46" Margin="48,248,0,0" VerticalAlignment="Top" Width="211" FontSize="18">
+        <ComboBox x:Name="priority" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="46" Margin="48,264,0,0" VerticalAlignment="Top" Width="211" FontSize="18">
             <ComboBoxItem>Niski</ComboBoxItem>
             <ComboBoxItem IsSelected="True">Normalny</ComboBoxItem>
             <ComboBoxItem>Wysoki</ComboBoxItem>
@@ -17,11 +17,13 @@
         <CheckBox x:Name="endDate" Content="Czy posiada termin realizacji
                   " HorizontalAlignment="Left" Margin="535,36,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="endDateCalendar" Text=""  HorizontalAlignment="Left" Margin="535,56,0,0" VerticalAlignment="Top" Height="23" Width="152"/>
-        <ComboBox x:Name="status" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="311,248,0,0" VerticalAlignment="Top" Width="196" Height="46" FontSize="18">
+        <ComboBox x:Name="status" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="311,264,0,0" VerticalAlignment="Top" Width="196" Height="46" FontSize="18">
             <ComboBoxItem IsSelected="True">Nowy</ComboBoxItem>
             <ComboBoxItem>W realizacji</ComboBoxItem>
             <ComboBoxItem>Zakończony</ComboBoxItem>
         </ComboBox>
         <Button x:Name="update" Content="Aktualizuj task" HorizontalAlignment="Left" Height="46" Margin="188,334,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Click="Update"/>
+        <Label Content="Priorytet" HorizontalAlignment="Left" Height="26" Margin="108,230,0,0" VerticalAlignment="Top" Width="87"/>
+        <Label Content="Status" HorizontalAlignment="Left" Height="26" Margin="372,230,0,0" VerticalAlignment="Top" Width="87"/>
     </Grid>
 </Window>
