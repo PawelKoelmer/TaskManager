@@ -1,0 +1,27 @@
+﻿<Window x:Class="TaskManager.EditWindow.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager.EditWindow"
+        mc:Ignorable="d"
+        Title="Edit" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="TaskText" HorizontalAlignment="Left" Height="189" Margin="48,36,0,0" TextWrapping="Wrap" MaxLength="1000" VerticalAlignment="Top" Width="459"/>
+        <!--<Button x:Name="Add" Content="Dodaj Task" HorizontalAlignment="Left" Height="46" Margin="188,334,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Click="createTask"/>-->
+        <ComboBox x:Name="priority" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="46" Margin="48,248,0,0" VerticalAlignment="Top" Width="211" FontSize="18">
+            <ComboBoxItem>Niski</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Normalny</ComboBoxItem>
+            <ComboBoxItem>Wysoki</ComboBoxItem>
+        </ComboBox>
+        <CheckBox x:Name="endDate" Content="Czy posiada termin realizacji
+                  " HorizontalAlignment="Left" Margin="535,36,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="endDateCalendar" Text=""  HorizontalAlignment="Left" Margin="535,56,0,0" VerticalAlignment="Top" Height="23" Width="152"/>
+        <ComboBox x:Name="status" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="311,248,0,0" VerticalAlignment="Top" Width="196" Height="46" FontSize="18">
+            <ComboBoxItem IsSelected="True">Nowy</ComboBoxItem>
+            <ComboBoxItem>W realizacji</ComboBoxItem>
+            <ComboBoxItem>Zakończony</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="update" Content="Aktualizuj task" HorizontalAlignment="Left" Height="46" Margin="188,334,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Click="Update"/>
+    </Grid>
+</Window>

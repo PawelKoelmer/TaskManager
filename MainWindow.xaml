@@ -1,0 +1,66 @@
+﻿<Window x:Class="TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager"
+        mc:Ignorable="d"
+        Title="TaskManager" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="258*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AddButton" Content="Dodaj Task" HorizontalAlignment="Left" Margin="60,480,0,0" VerticalAlignment="Top" Width="178" Height="36" Grid.ColumnSpan="2" Click="openAddTaskWindow"/>
+        <ComboBox x:Name="Priority" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  Grid.Column="1" Margin="111,480,65,0" VerticalAlignment="Top" Height="36" DropDownClosed="Priority_DropDownClosed"  >
+            <ComboBoxItem IsSelected="True">Wszystkie</ComboBoxItem>
+            <ComboBoxItem>Niski</ComboBoxItem>
+            <ComboBoxItem >Normalny</ComboBoxItem>
+            <ComboBoxItem>Wysoki</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Status" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                  HorizontalAlignment="Left" Margin="337,480,0,0" VerticalAlignment="Top" Width="177" Height="36" 
+                  Grid.ColumnSpan="2" DropDownClosed="Status_DropDownClosed" >
+            <ComboBoxItem IsSelected="True">Wszystkie</ComboBoxItem>
+            <ComboBoxItem>Nowy</ComboBoxItem>
+            <ComboBoxItem >W realizacji</ComboBoxItem>
+            <ComboBoxItem>Zakończone</ComboBoxItem>
+        </ComboBox>
+        <DataGrid x:Name="TaskGrid" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="393" Margin="60,34,0,0" 
+                  VerticalAlignment="Top" Width="635" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Text}" IsReadOnly="True" Header="Zadanie" Width="250" CanUserResize="False" MaxWidth="250">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap">
+
+                            </Setter>
+                        </Style>
+
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=priority}" IsReadOnly="True" Header="Priorytet"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=status}" IsReadOnly="True" Header="Status"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=End_Date}" IsReadOnly="True" Header="Data zakończenia"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Usuń zadanie">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Usuń" Click="DeleteTask"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Edytuj">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edytuj" Click="EditTask"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+                  
+
+    </Grid>
+</Window>
